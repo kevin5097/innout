@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농구 기초 체력 루틴</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏀 농구 체력 루틴 생성기</h1>
+
+        <div class="controls">
+            <label>운동 선택:
+                <select id="exerciseType">
+                    <option value="all">모두</option>
+                    <option value="jogging">조깅</option>
+                    <option value="bodyweight">맨몸 운동</option>
+                    <option value="agility">민첩성</option>
+                </select>
+            </label>
+
+            <label>난이도:
+                <select id="level">
+                    <option value="easy">초급</option>
+                    <option value="medium">중급</option>
+                    <option value="hard">고급</option>
+                </select>
+            </label>
+
+            <button id="generateBtn">루틴 생성</button>
+        </div>
+
+        <div id="routine"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
