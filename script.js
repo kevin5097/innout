@@ -41,12 +41,14 @@ document.getElementById("generateBtn").addEventListener("click", () => {
 
     adjustedRoutine.forEach(ex => {
         const div = document.createElement("div");
-        div.className = "exercise";
+        div.className = "exercise-card";
         div.innerHTML = `
             <label>
-                <input type="checkbox"> 
-                <strong>${ex.name}</strong> - ${ex.reps || ex.duration} <br>
-                <em style="font-size: 0.9em; color: #555;">효과: ${ex.benefit}</em>
+                <input type="checkbox">
+                <div class="exercise-info">
+                    <strong>${ex.name}</strong> - ${ex.reps || ex.duration} <br>
+                    <em>효과: ${ex.benefit}</em>
+                </div>
             </label>
         `;
         routineDiv.appendChild(div);
