@@ -5,3 +5,28 @@ const supabase = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_ANON_KEY
 );
+async function loadRoutines() {
+  const { data, error } = await supabase
+    .from("routines")
+    .select("*")
+    .order("created_at", { ascending: true });
+
+  if (error) {
+    console.error("루틴 로드 실패:", error);
+    return;
+  }
+
+  renderRoutines(data);
+}
+function renderRoutines(routines) {
+  const list = document.getElementById("routine-list");
+  list.innerHTML = "";
+
+  routines.forEach(routine => {
+    const li = document.createElement("li");
+    li.textContent = `${routine.name} (${routine.level ?? "미지정"})`;
+    list.appendChild(li);
+  });
+}
+
+loadRoutines();
