@@ -7,13 +7,13 @@ const supabaseClient = window.supabase.createClient(
 );
 
 async function loadRoutines() {
-  const { data, error } = await supabase
+  const { data, error } = await supabaseClient
     .from("routines")
     .select("*")
     .order("created_at", { ascending: true });
 
   if (error) {
-    console.error("루틴 로드 실패:", error);
+    console.error(error);
     return;
   }
 
