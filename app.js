@@ -37,7 +37,7 @@ function renderRoutines(routines) {
 
   routines.forEach((routine) => {
     const li = document.createElement("li");
-    li.textContent = `${routine.name} (${routine.level ?? "미지정"})`;
+    li.textContent = `${routine.name} ${routine.description} (${routine.level ?? "미지정"})`;
     list.appendChild(li);
   });
 }
